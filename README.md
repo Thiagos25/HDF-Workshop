@@ -203,8 +203,8 @@ Run all the below commands:
   ````
 sudo wget http://apache.claz.org/nifi/minifi/0.5.0/minifi-0.5.0-bin.tar.gz
 sudo wget http://apache.claz.org/nifi/minifi/0.5.0/minifi-toolkit-0.5.0-bin.tar.gz
-sudo cp minifi-0.5.0-bin.tar.gz /usr/hdf
-sudo cd /usr/hdf
+sudo mv minifi-0.5.0-bin.tar.gz /usr/hdf/current/
+sudo cd /usr/hdf/current/
 sudo tar zxvf minifi-0.5.0-bin.tar.gz
 sudo tar xzvf minifi-toolkit-0.5.0-bin.tar.gz
   ````
