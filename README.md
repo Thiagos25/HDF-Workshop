@@ -191,12 +191,23 @@ To get started we need to consume the data from the Meetup RSVP stream, extract 
 
 In this lab, we will learn how to configure MiNiFi to send data to NiFi:
 
+* Intalling MiNiFi
 * Setting up the Flow for NiFi
 * Setting up the Flow for MiNiFi
 * Preparing the flow for MiNiFi
 * Configuring and starting MiNiFi
 * Enjoying the data flow!
 
+## Installing MiNiFi
+Run all the below commands:
+  ````
+sudo wget http://apache.claz.org/nifi/minifi/0.5.0/minifi-0.5.0-bin.tar.gz
+sudo wget http://apache.claz.org/nifi/minifi/0.5.0/minifi-toolkit-0.5.0-bin.tar.gz
+sudo cp minifi-0.5.0-bin.tar.gz /usr/hdf
+sudo cd /usr/hdf
+sudo tar zxvf minifi-0.5.0-bin.tar.gz
+sudo tar xzvf minifi-toolkit-0.5.0-bin.tar.gz
+  ````
 
 ## Setting up the Flow for NiFi
 **NOTE:** Before starting NiFi we need to enable Site-to-Site communication. To do that we will use Ambari to update the required configuration. In Ambari the below property values can be found at ````http://<EC2_NODE>:8080/#/main/services/NIFI/configs```` .
