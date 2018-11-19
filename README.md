@@ -245,7 +245,7 @@ Now we should be ready to create our flow. To do this do the following:
    * Create a template for MiNiFi
    * Select the GenerateFlowFile, the NiFi Flow Remote Processor Group, and the Connection between them (these are the only things needed for MiNiFi)
    * Select the "Create Template" button from the toolbar
-   * Choose a name for your template
+   * Choose the name "minifi_flow" for your template
 
 
 7. Now we need to download the template
@@ -259,7 +259,7 @@ Now we should be ready to create our flow. To do this do the following:
 
       For example:
 
-      ````sudo bin/config.sh transform /temp/minifi_flow.xml config.yml````
+      ````sudo bin/config.sh transform /tmp/minifi_flow.xml config.yml````
 
 10. Next copy the ````config.yml```` to the ````minifi-0.5.0/conf```` directory. That is the file that MiNiFi uses to generate the nifi.properties file and the flow.xml.gz for MiNiFi.
 
