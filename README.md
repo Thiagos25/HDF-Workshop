@@ -227,7 +227,7 @@ sudo tar xzvf minifi-toolkit-0.5.0-bin.tar.gz
 
 Now we should be ready to create our flow. To do this do the following:
 
-1.	The first thing we are going to do is setup an Input Port. This is the port that MiNiFi will be sending data to. To do this drag the ####Input Port icon#### to the canvas and call it "From MiNiFi".
+1.	The first thing we are going to do is setup an Input Port. This is the port that MiNiFi will be sending data to. To do this drag the Input Port icon to the canvas and call it "From MiNiFi".
 
 2. Now that the Input Port is configured we need to have somewhere for the data to go once we receive it. In this case we will keep it very simple and just log the attributes. To do this drag the Processor icon to the canvas and choose the LogAttribute processor.
 
