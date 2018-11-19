@@ -200,12 +200,11 @@ In this lab, we will learn how to configure MiNiFi to send data to NiFi:
 ## Installing MiNiFi
 Run all the below commands:
 ````
-cd /tmp/
+
+sudo mkdir /usr/hdf/current/nifi/minifi
+cd /usr/hdf/current/nifi/minifi
 sudo wget http://apache.claz.org/nifi/minifi/0.5.0/minifi-0.5.0-bin.tar.gz
 sudo wget http://apache.claz.org/nifi/minifi/0.5.0/minifi-toolkit-0.5.0-bin.tar.gz
-sudo mv minifi-0.5.0-bin.tar.gz /usr/hdf/current/
-sudo mv minifi-toolkit-0.5.0-bin.tar.gz /usr/hdf/current/
-cd /usr/hdf/current/
 sudo tar zxvf minifi-0.5.0-bin.tar.gz
 sudo tar xzvf minifi-toolkit-0.5.0-bin.tar.gz
   ````
