@@ -424,7 +424,7 @@ bin/kafka-console-producer.sh --broker-list demo.hortonworks.com:6667 --topic fi
 
   - Step 4: Add a JoltTransformJSON processor to the canvas.
   - Step 5: Add a routing for the success relationship of the UpdateAttribute processor to the JoltTransformJSON processor added in Step 5.
-  - Step 6: Configure the JoltTransformJSON processor as shown below:
+  - Step 6: Configure the JoltTransformJSON processor as shown below:  ``meetup_rsvp_avro``
 
     ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/jolt_transform_config.png)
 
@@ -474,62 +474,3 @@ bin/kafka-console-producer.sh --broker-list demo.hortonworks.com:6667 --topic fi
 
 5. Messages should now appear in the consumer window.
 
-
-<!--
-
-------------------
-
-
-# Lab 7
-
-## Tying it all together
-For this lab we are going to break from the Meetup RSVP data and use a fictious IoT Trucking application.
-
-  - Step 1: SSH to your EC2 instance
-  - Step 2: We are now going to get a data loader running:
-
-    ````
-    cd /root/Data-Loader
-    nohup java -cp /root/Data-Loader/stream-simulator-jar-with-dependencies.jar  hortonworks.hdp.refapp.trucking.simulator.SimulationRegistrySerializerRunnerApp 20000 hortonworks.hdp.refapp.trucking.simulator.impl.domain.transport.Truck  hortonworks.hdp.refapp.trucking.simulator.impl.collectors.KafkaEventSerializedWithRegistryCollector 1 /root/Data-Loader/routes/midwest/ 10000 demo.hortonworks.com:6667 http://demo.hortonworks.com:7788/api/v1 ALL_STREAMS NONSECURE &
-    ````
-  - Step 3: Now that the data is flowing, instantiate the 'IoT Trucking' NiFi template.
-  - Step 4: Inspect the flow that is created and ensure there are no errors, if there are go ahead and correct those.
-  - Step 5: Start this section of the NiFi flow.
-  - Step 6: Go to your Ambari dashboard and navigate to the SAM UI, by selecting the following URL:
-
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/SAM_URL_Link.png)
-
-  - Step 7: You should now see the SAM UI that looks like the following:
-
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/sam_default.png)
-
-  - Step 8: To inspect the application, click the icon in the top right hadn corner of the applicaiton and chose 'Edit', as shown below:
-
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/sam_app_edit.png)
-
-  - Step 9: You shoudl now see a UI that looks like the following:
-
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/sam_edit.png)
-
-    Spend a moment to explore and dig into any of the components. Notice at the bottom right hand corner is states "Status Active", this indicates that the application is running.
-
-  - Step 10: Verify that Storm the application is running using Storm Mon. To do this go back to your Ambari Dashboard and chose the "Storm Mon link" as shown below:
-
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/storm_mon_link.png)
-
-    That should bring up a UI that looks like the following:
-
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/storm_mon_ui.png)
-
-  - Step 11: We are now ready to explore Superset, to do this go back to the Ambari dashboard and from the Drui service chose the "Quick Link" to "Superset" as shown below:
-
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/superset_link.png)
-
-  - Step 12: Exploring Superset -- following the link in Step 11 should take you to a UI that looks like the following:
-
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/superset_welcome.png)
-
-  **NOTE: If you are prompted for a password use admin/admin**
-
-    Spend some time exploring the dashboard and the datasources.
--->
