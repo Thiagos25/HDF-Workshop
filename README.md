@@ -418,13 +418,13 @@ bin/kafka-console-producer.sh --broker-list demo.hortonworks.com:6667 --topic fi
   - Step 0: Remove the PutFile and PublishKafka processors from the canvas, we will not need them for this section.
   - Step 1: Add a ````UpdateAttribute```` processor to the canvas.
   - Step 2: Add a routing for the success relationship of the ReplaceText processor to the UpdateAttrbute processor added in Step 1.
-  - Step 3: Configure the UpdateAttribute processor as shown below:
+  - Step 3: Configure the UpdateAttribute processor as shown below: ``meetup_rsvp_avro``
 
     ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/update_attribute_schema_name.png)
 
   - Step 4: Add a JoltTransformJSON processor to the canvas.
   - Step 5: Add a routing for the success relationship of the UpdateAttribute processor to the JoltTransformJSON processor added in Step 5.
-  - Step 6: Configure the JoltTransformJSON processor as shown below:  ``meetup_rsvp_avro``
+  - Step 6: Configure the JoltTransformJSON processor as shown below:  
 
     ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/jolt_transform_config.png)
 
