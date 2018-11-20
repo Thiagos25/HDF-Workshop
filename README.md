@@ -412,7 +412,7 @@ bin/kafka-console-producer.sh --broker-list demo.hortonworks.com:6667 --topic fi
 
         For the Schema Text you can download it [here](https://raw.githubusercontent.com/apsaltis/HDF-Workshop/master/meetup_rsvp.asvc) or copy and paste it:
 	
-``
+    ```
 {
   "type": "record",
   "name": "meetup_rsvp_avro",
@@ -494,7 +494,7 @@ bin/kafka-console-producer.sh --broker-list demo.hortonworks.com:6667 --topic fi
     }
   ]
 }	    
-``
+      ```
 
         Once the schema information fields have been filled and schema uploaded, click **Save**.
 
