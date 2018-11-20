@@ -352,20 +352,15 @@ bin/kafka-console-producer.sh --broker-list demo.hortonworks.com:6667 --topic fi
 
     ````
 
-    NOTE: Based on how Kafka reports metrics topics with a period ('.') or underscore ('_') may collide with metric names and should be avoided. If they cannot be avoided, then you should only use one of them.
-
   - Step 4:	Ensure the topic was created
     ````
     bin/kafka-topics.sh --list --zookeeper localhost:2181
     ````
 
 2. Integrating NiFi
-  - Step 1: Add a PublishKafka_1_0 processor to the canvas.
-  - Step 2: Add a routing for the success relationship of the ReplaceText processor to the PublishKafka_1_0 processor added in Step 1 as shown below:
-
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/publishkafka.png)
-  - Step 3: Configure the topic and broker for the PublishKafka_1_0 processor,
-  where topic is meetup_rsvp_raw and broker is demo.hortonworks.com:6667.
+  - Step 1: Add a ````PublishKafka```` processor to the canvas.
+  - Step 2: Add a routing for the ````success relationship```` of the ````ReplaceText processor```` to the ````PublishKafka processor```` added in Step 1.
+  - Step 3: Configure the topic and broker for the PublishKafka processor, where topic is ````meetup_rsvp_raw```` and broker is ````demo.hortonworks.com:6667````.
 
 
 3. Start the NiFi flow
