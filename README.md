@@ -393,8 +393,6 @@ bin/kafka-console-producer.sh --broker-list demo.hortonworks.com:6667 --topic fi
 
     ````
 
-    NOTE: Based on how Kafka reports metrics topics with a period ('.') or underscore ('_') may collide with metric names and should be avoided. If they cannot be avoided, then you should only use one of them.
-
   - Step 4:	Ensure the topic was created
     ````
     bin/kafka-topics.sh --list --zookeeper localhost:2181
@@ -412,7 +410,91 @@ bin/kafka-console-producer.sh --broker-list demo.hortonworks.com:6667 --topic fi
 
         ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/add_schema_dialog.png)
 
-        For the Schema Text you can download it [here](https://raw.githubusercontent.com/apsaltis/HDF-Workshop/master/meetup_rsvp.asvc) and either copy and paste it or upload the file.
+        For the Schema Text you can download it [here](https://raw.githubusercontent.com/apsaltis/HDF-Workshop/master/meetup_rsvp.asvc) or copy and paste it:
+	
+``
+{
+  "type": "record",
+  "name": "meetup_rsvp_avro",
+  "fields": [
+    {
+      "name": "event_name",
+      "type": "string",      
+      "default": "no_name"
+    },
+    {
+      "name": "event_url",
+      "type": "string",
+      "default": "no_url"
+    },
+    {
+      "name": "venue",
+      "type": 
+        {
+          "type": "record",
+          "name": "venue",
+          "fields": [
+            {
+              "name": "lat",
+              "type": "float",
+              "default": 0.0
+            },
+            {
+              "name": "lon",
+              "type": "float",
+              "default": 0.0
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "default": "no_venue_name"
+            }
+          ]
+        }      
+    },
+    {
+      "name": "group",
+      "type": 
+        {
+          "type": "record",
+          "name": "group",
+          "fields": [
+            {
+              "name": "group_city",
+              "type": "string",
+              "default": "no_group_city"
+            },
+            {
+              "name": "group_country",
+              "type": "string",
+              "default": "no_group_country"
+            },
+            {
+              "name": "group_name",
+              "type": "string",
+              "default": "no_group_name"
+            },
+            {
+              "name": "group_state",
+              "type": "string",
+              "default": "no_group_state"
+            },
+            {
+              "name": "urlkey",
+              "type": "string",
+              "default": "no_group_urlkey"
+            },
+            {
+              "name": "topic_name",
+              "type": "string",
+              "default": "no_group_topic_name"
+            }
+          ]
+        }      
+    }
+  ]
+}	    
+``
 
         Once the schema information fields have been filled and schema uploaded, click **Save**.
 
