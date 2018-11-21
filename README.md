@@ -439,26 +439,26 @@ bin/kafka-console-producer.sh --broker-list demo.hortonworks.com:6667 --topic fi
   ``
   - Step 7: Add a ``LogAttribute`` processor to the canvas.
   - Step 8: Add a routing for the ``failure relationship`` of the ``JoltTransformJSON processor`` to the ``LogAttribute processor`` added in Step 7.
-  - Step 9: Add a ``PublishKafkaRecord_1_0`` to the canvas.
-  - Step 10: Add a routing for the ``success relationship`` of the ``JoltTransformJSON processor`` to the ``PublishKafkaRecord_1_0 processor`` added in Step 9.
-  - Step 11: Configure the PublishKafkaRecord_1_0 processor to look like the following: 
+  - Step 9: Add a ``PublishKafkaRecord_0_10`` to the canvas.
+  - Step 10: Add a routing for the ``success relationship`` of the ``JoltTransformJSON processor`` to the ``PublishKafkaRecord_0_10 processor`` added in Step 9.
+  - Step 11: Configure the PublishKafkaRecord_0_10 processor to look like the following: 
   Kafka Brokers : ````demo.hortonworks.com:6667````
   Topic Name:     ````meetup_rsvp_avro````
 
     ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/publishkafka_record_configuration.png)
 
 
-  - Step 12: When you configure the JsonTreeReader and AvroRecordSetWriter, you will first need to configure a schema registry controller service. The schema registry controller service we are going to use is the 'HWX Schema Registry' ````HortonworksSchemaRegistry```` , it should be configured as shown below:
+  - Step 12: When you configure the JsonTreeReader and AvroRecordSetWriter, you will first need to configure a schema registry controller service. The schema registry controller service we are going to use is the 'HWX Schema Registry' ````HortonworksSchemaRegistry```` , it should be configured as shown below: ````http://demo.hortonworks.com:7788/api/v1/````
 
     ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/hwx_schema_registry_config.png)
 
   - Step 13: Configure the JsonTreeReader as shown below:
 
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/json_tree_reader_config.png)
-
+    ![Image](https://github.com/Thiagos25/HDF-Workshop/blob/master/imgs/JsonTreeReader.png)
+    
   - Step 14: Configure the AvroRecordSetWriter as shown below:
 
-      ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/avro_recordset_writer.png)
+      ![Image](https://github.com/Thiagos25/HDF-Workshop/blob/master/imgs/AvroRecordSetWriter.png)
 
     After following the above steps this section of your flow should look like the following:
 
