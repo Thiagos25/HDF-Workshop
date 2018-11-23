@@ -24,11 +24,6 @@
   - Adding the Meetup Avro Schema
   - Sending Avro data to Kafka
 
-<!-- - [Lab 7](#lab-7) - Tying it all together with SAM
-  - Creating the Streaming Application
-  - Watching the dashboard -->
-
-
 ---------------
 
 # Lab 1
@@ -44,11 +39,10 @@ Credentials will be provided for these services by the instructor:
 
 ### To connect using Putty from Windows laptop
 
-NOTE: The following instructions are for using Putty. You can also use other popular SSH tools such as [MobaXterm](https://mobaxterm.mobatek.net/) or [SmarTTY](http://smartty.sysprogs.com/)
+All you need is located on: D:/HDF_Workshop
 
-- Right click to download [this ppk key](https://raw.githubusercontent.com/apsaltis/HDF-Workshop/master/hdf-workshop.ppk) > Save link as > save to Downloads folder
 - Use putty to connect to your node using the ppk key:
-  - Connection > SSH > Auth > Private key for authentication > Browse... > Select hdf-workshop.ppk
+  - Connection > SSH > Auth > Private key for authentication > Browse... > Select `HDF_workshop_key.ppk`
 ![Image](https://raw.githubusercontent.com/apsaltis/HDF-Workshop/master/putty.png)
 
 - Create a new seession called `hdf-workshop`
@@ -57,19 +51,19 @@ NOTE: The following instructions are for using Putty. You can also use other pop
 
 ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/putty-session.png)
 
-
+<!-- 
 ### To connect from Linux/MacOSX laptop
 
 - SSH into your EC2 node using below steps:
-- Right click to download [this pem key](https://raw.githubusercontent.com/apsaltis/HDF-Workshop/master/hdf-workshop.pem)  > Save link as > save to Downloads folder
+- Right click to download [this pem key](https://raw.githubusercontent.com/apsaltis/HDF-Workshop/master/HDF_workshop_key.pem)  > Save link as > save to Downloads folder
 - Copy pem key to ~/.ssh dir and correct permissions
     ```
-    cp ~/Downloads/hdf-workshop.pem ~/.ssh/
-    chmod 400 ~/.ssh/hdf-workshop.pem
+    cp ~/Downloads/HDF_workshop_key.pem ~/.ssh/
+    chmod 400 ~/.ssh/HDF_workshop_key.pem
     ```
  - Login to the ec2 node of the you have been assigned by replacing IP_ADDRESS_OF_EC2_NODE below with EC2 node IP Address (your instructor will provide this)
     ```
-     ssh -i  ~/.ssh/hdf-workshop.pem centos@IP_ADDRESS_OF_EC2_NODE
+     ssh -i  ~/.ssh/HDF_workshop_key.pem centos@IP_ADDRESS_OF_EC2_NODE
 
     ```
 
@@ -77,7 +71,7 @@ NOTE: The following instructions are for using Putty. You can also use other pop
     ```
     sudo su -
     ```
-
+-->
 
 #### Login to Ambari
 
