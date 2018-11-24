@@ -51,40 +51,18 @@ All you need is located on: D:/HDF_Workshop
 
 ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/putty-session.png)
 
-<!-- 
-### To connect from Linux/MacOSX laptop
-
-- SSH into your EC2 node using below steps:
-- Right click to download [this pem key](https://raw.githubusercontent.com/apsaltis/HDF-Workshop/master/HDF_workshop_key.pem)  > Save link as > save to Downloads folder
-- Copy pem key to ~/.ssh dir and correct permissions
-    ```
-    cp ~/Downloads/HDF_workshop_key.pem ~/.ssh/
-    chmod 400 ~/.ssh/HDF_workshop_key.pem
-    ```
- - Login to the ec2 node of the you have been assigned by replacing IP_ADDRESS_OF_EC2_NODE below with EC2 node IP Address (your instructor will provide this)
-    ```
-     ssh -i  ~/.ssh/HDF_workshop_key.pem centos@IP_ADDRESS_OF_EC2_NODE
-
-    ```
-
-  - To change user to root you can:
-    ```
-    sudo su -
-    ```
--->
 
 #### Login to Ambari
 
-- Login to Ambari web UI by opening http://{YOUR_IP}:8080 and log in with **admin/admin**
+- Login to Ambari web UI by opening http://{YOUR_IP}:8080 and log in with **admin/StrongPassword**
 
 - You will see a list of Hadoop components running on your node on the left side of the page
   - They should all show green (ie started) status. If not, start them by Ambari via 'Service Actions' menu for that service
 
-#### NiFi Install
+#### Access NiFi
 
+- Login to NiFi web UI by opening http://{YOUR_IP}:9090/nifi 
 - NiFi is installed at: /usr/hdf/current/nifi
-
-
 
 -----------------------------
 
