@@ -198,15 +198,15 @@ sudo tar xzvf minifi-toolkit-0.5.0-bin.tar.gz
 
 Now we should be ready to create our flow. To do this do the following:
 
-1.	The first thing we are going to do is setup an Input Port. This is the port that MiNiFi will be sending data to. To do this drag the Input Port icon to the canvas and call it "From MiNiFi".
+1.	The first thing we are going to do is setup an Input Port. This is the port that MiNiFi will be sending data to. To do this drag the ```Input Port icon``` to the canvas and call it "From MiNiFi".
 
-2. Now that the Input Port is configured we need to have somewhere for the data to go once we receive it. In this case we will keep it very simple and just log the attributes. To do this drag the Processor icon to the canvas and choose the LogAttribute processor.
+2. Now that the Input Port is configured we need to have somewhere for the data to go once we receive it. In this case we will keep it very simple and just log the attributes. To do this drag the Processor icon to the canvas and choose the ```LogAttribute``` processor.
 
 3.	Now that we have the input port and the processor to handle our data, we need to connect them.
 
 4.  We are now ready to build the MiNiFi side of the flow. To do this do the following:
-	* Add a GenerateFlowFile processor to the canvas (don't forget to configure the properties on it)
-	* Add a Remote Processor Group to the canvas
+	* Add a ```GenerateFlowFile``` processor to the canvas (don't forget to configure the properties on it)
+	* Add a ```Remote Processor Group``` to the canvas
 
            For the URL copy and paste the URL for the NiFi UI from your browser
    * Connect the GenerateFlowFile to the Remote Process Group
@@ -214,13 +214,13 @@ Now we should be ready to create our flow. To do this do the following:
 5. The next step is to generate the flow we need for MiNiFi. To do this do the following steps:
 
    * Create a template for MiNiFi
-   * Select the GenerateFlowFile, the NiFi Flow Remote Processor Group, and the Connection between them (these are the only things needed for MiNiFi)
-   * Select the "Create Template" button from the toolbar
+   * Select the ```GenerateFlowFile```, the NiFi Flow Remote Processor Group, and the Connection between them (these are the only things needed for MiNiFi)
+   * Select the ```"Create Template"``` button from the toolbar
    * Choose the name "minifi_flow" for your template
 
 
 7. Now we need to download the template
-8. Now SCP the template you downloaded to the ````/tmp```` directory on your EC2 instance. If you are using Windows you will need to download WinSCP (https://winscp.net/eng/download.php)
+8. Now SCP the template you downloaded to the ````/tmp```` directory on your EC2 instance. If you are using Windows you will need to use WinSCP 
 9.  We are now ready to setup MiNiFi. However before doing that we need to convert the template to YAML format which MiNiFi uses. To do this we need to do the following:
 
     * Navigate to the minifi-toolkit directory (/usr/hdf/current/nifi/minifi/minifi-toolkit-0.5.0)
