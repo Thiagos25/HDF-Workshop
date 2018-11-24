@@ -113,10 +113,10 @@ To get started we need to consume the data from the Meetup RSVP stream, extract 
   A template for this flow can be found [here](https://raw.githubusercontent.com/apsaltis/HDF-Workshop/master/templates/HDF-Workshop_Lab1-Flow.xml)
 
 
-  - Step 1: Add a ConnectWebSocket processor to the cavas
-      - In case you are using a downloaded template, the ControllerService will be prepopulated. You will need to enable the ControllerService. Double-click the processor and follow the arrow next to the JettyWebSocketClient
+  - Step 1: Add a ```ConnectWebSocket```  processor to the cavas
+      - In case you are using a downloaded template, the ControllerService will be prepopulated. You will need to enable the ControllerService. Double-click the processor and follow the arrow next to the ``` JettyWebSocketClient``` 
       - Set WebSocket Client ID to your favorite number.
-      - Set ws://stream.meetup.com/2/rsvps for WebSocket URI
+      - Set ``` ws://stream.meetup.com/2/rsvps```  for WebSocket URI
   - Step 2: Add an UpdateAttribute procesor
     - Configure it to have a custom property called ``` mime.type ``` with the value of ``` application/json ```
   - Step 3. Add an EvaluateJsonPath processor and configure it as shown below:
@@ -194,7 +194,6 @@ In this lab, we will learn how to configure MiNiFi to send data to NiFi:
 ## Installing MiNiFi
 Run all the below commands:
 ````
-
 sudo mkdir /usr/hdf/current/nifi/minifi
 cd /usr/hdf/current/nifi/minifi
 sudo wget http://apache.claz.org/nifi/minifi/0.5.0/minifi-0.5.0-bin.tar.gz
