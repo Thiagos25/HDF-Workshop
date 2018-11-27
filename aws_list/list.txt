@@ -1,6 +1,58 @@
-57
-
-http://ec2-54-183-164-132.us-west-1.compute.amazonaws.com
-
-
-D:/HDF_Workshop
+ID	Public DNS (IPv4)
+0	ec2-18-144-6-2.us-west-1.compute.amazonaws.com
+1	ec2-52-53-232-232.us-west-1.compute.amazonaws.com
+2	ec2-13-52-80-24.us-west-1.compute.amazonaws.com
+3	ec2-54-183-162-110.us-west-1.compute.amazonaws.com
+4	ec2-18-144-10-53.us-west-1.compute.amazonaws.com
+5	ec2-54-153-105-132.us-west-1.compute.amazonaws.com
+6	ec2-54-153-23-60.us-west-1.compute.amazonaws.com
+7	ec2-54-193-1-91.us-west-1.compute.amazonaws.com
+8	ec2-54-67-52-239.us-west-1.compute.amazonaws.com
+9	ec2-52-53-250-34.us-west-1.compute.amazonaws.com
+10	ec2-52-53-169-158.us-west-1.compute.amazonaws.com
+11	ec2-54-183-29-61.us-west-1.compute.amazonaws.com
+12	ec2-54-183-94-5.us-west-1.compute.amazonaws.com
+13	ec2-54-215-239-97.us-west-1.compute.amazonaws.com
+14	ec2-52-53-163-106.us-west-1.compute.amazonaws.com
+15	ec2-52-8-168-60.us-west-1.compute.amazonaws.com
+16	ec2-13-56-234-124.us-west-1.compute.amazonaws.com
+17	ec2-13-52-80-216.us-west-1.compute.amazonaws.com
+18	ec2-18-144-24-6.us-west-1.compute.amazonaws.com
+19	ec2-13-52-74-105.us-west-1.compute.amazonaws.com
+20	ec2-54-67-95-110.us-west-1.compute.amazonaws.com
+21	ec2-54-153-123-190.us-west-1.compute.amazonaws.com
+22	ec2-52-53-167-92.us-west-1.compute.amazonaws.com
+23	ec2-52-53-164-234.us-west-1.compute.amazonaws.com
+24	ec2-54-153-112-9.us-west-1.compute.amazonaws.com
+25	ec2-13-52-76-229.us-west-1.compute.amazonaws.com
+26	ec2-54-153-95-225.us-west-1.compute.amazonaws.com
+27	ec2-13-57-212-137.us-west-1.compute.amazonaws.com
+28	ec2-52-53-195-55.us-west-1.compute.amazonaws.com
+29	ec2-54-241-156-135.us-west-1.compute.amazonaws.com
+30	ec2-54-67-96-149.us-west-1.compute.amazonaws.com
+31	ec2-13-57-203-234.us-west-1.compute.amazonaws.com
+32	ec2-54-193-56-41.us-west-1.compute.amazonaws.com
+33	ec2-54-153-0-129.us-west-1.compute.amazonaws.com
+34	ec2-54-183-181-49.us-west-1.compute.amazonaws.com
+35	ec2-54-215-137-144.us-west-1.compute.amazonaws.com
+36	ec2-13-57-245-229.us-west-1.compute.amazonaws.com
+37	ec2-13-57-247-70.us-west-1.compute.amazonaws.com
+38	ec2-54-153-96-191.us-west-1.compute.amazonaws.com
+39	ec2-54-183-210-36.us-west-1.compute.amazonaws.com
+40	ec2-18-144-28-145.us-west-1.compute.amazonaws.com
+41	ec2-13-57-181-74.us-west-1.compute.amazonaws.com
+42	ec2-54-153-63-31.us-west-1.compute.amazonaws.com
+43	ec2-52-53-170-96.us-west-1.compute.amazonaws.com
+44	ec2-52-53-186-210.us-west-1.compute.amazonaws.com
+45	ec2-13-57-34-128.us-west-1.compute.amazonaws.com
+46	ec2-13-57-251-243.us-west-1.compute.amazonaws.com
+47	ec2-54-215-238-255.us-west-1.compute.amazonaws.com
+48	ec2-52-53-166-47.us-west-1.compute.amazonaws.com
+49	ec2-52-53-233-9.us-west-1.compute.amazonaws.com
+50	ec2-13-57-19-66.us-west-1.compute.amazonaws.com
+51	ec2-13-57-39-184.us-west-1.compute.amazonaws.com
+52	ec2-54-153-21-187.us-west-1.compute.amazonaws.com
+53	ec2-52-53-247-140.us-west-1.compute.amazonaws.com
+54	ec2-54-183-96-179.us-west-1.compute.amazonaws.com
+55	ec2-54-183-251-102.us-west-1.compute.amazonaws.com
+56	ec2-54-193-56-28.us-west-1.compute.amazonaws.com
