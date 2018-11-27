@@ -24,11 +24,6 @@
   - Adding the Meetup Avro Schema
   - Sending Avro data to Kafka
 
-<!-- - [Lab 7](#lab-7) - Tying it all together with SAM
-  - Creating the Streaming Application
-  - Watching the dashboard -->
-
-
 ---------------
 
 # Lab 1
@@ -44,11 +39,10 @@ Credentials will be provided for these services by the instructor:
 
 ### To connect using Putty from Windows laptop
 
-NOTE: The following instructions are for using Putty. You can also use other popular SSH tools such as [MobaXterm](https://mobaxterm.mobatek.net/) or [SmarTTY](http://smartty.sysprogs.com/)
+All you need is located on: D:/HDF_Workshop
 
-- Right click to download [this ppk key](https://raw.githubusercontent.com/apsaltis/HDF-Workshop/master/hdf-workshop.ppk) > Save link as > save to Downloads folder
 - Use putty to connect to your node using the ppk key:
-  - Connection > SSH > Auth > Private key for authentication > Browse... > Select hdf-workshop.ppk
+  - Connection > SSH > Auth > Private key for authentication > Browse... > Select `HDF_workshop_key.ppk`
 ![Image](https://raw.githubusercontent.com/apsaltis/HDF-Workshop/master/putty.png)
 
 - Create a new seession called `hdf-workshop`
@@ -58,39 +52,17 @@ NOTE: The following instructions are for using Putty. You can also use other pop
 ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/putty-session.png)
 
 
-### To connect from Linux/MacOSX laptop
-
-- SSH into your EC2 node using below steps:
-- Right click to download [this pem key](https://raw.githubusercontent.com/apsaltis/HDF-Workshop/master/hdf-workshop.pem)  > Save link as > save to Downloads folder
-- Copy pem key to ~/.ssh dir and correct permissions
-    ```
-    cp ~/Downloads/hdf-workshop.pem ~/.ssh/
-    chmod 400 ~/.ssh/hdf-workshop.pem
-    ```
- - Login to the ec2 node of the you have been assigned by replacing IP_ADDRESS_OF_EC2_NODE below with EC2 node IP Address (your instructor will provide this)
-    ```
-     ssh -i  ~/.ssh/hdf-workshop.pem centos@IP_ADDRESS_OF_EC2_NODE
-
-    ```
-
-  - To change user to root you can:
-    ```
-    sudo su -
-    ```
-
-
 #### Login to Ambari
 
-- Login to Ambari web UI by opening http://{YOUR_IP}:8080 and log in with **admin/admin**
+- Login to Ambari web UI by opening http://{YOUR_IP}:8080 and log in with **admin/StrongPassword**
 
 - You will see a list of Hadoop components running on your node on the left side of the page
   - They should all show green (ie started) status. If not, start them by Ambari via 'Service Actions' menu for that service
 
-#### NiFi Install
+#### Access NiFi
 
+- Login to NiFi web UI by opening http://{YOUR_IP}:9090/nifi 
 - NiFi is installed at: /usr/hdf/current/nifi
-
-
 
 -----------------------------
 
@@ -119,10 +91,10 @@ To get started we need to consume the data from the Meetup RSVP stream, extract 
   A template for this flow can be found [here](https://raw.githubusercontent.com/apsaltis/HDF-Workshop/master/templates/HDF-Workshop_Lab1-Flow.xml)
 
 
-  - Step 1: Add a ConnectWebSocket processor to the cavas
-      - In case you are using a downloaded template, the ControllerService will be prepopulated. You will need to enable the ControllerService. Double-click the processor and follow the arrow next to the JettyWebSocketClient
+  - Step 1: Add a ```ConnectWebSocket```  processor to the cavas
+      - In case you are using a downloaded template, the ControllerService will be prepopulated. You will need to enable the ControllerService. Double-click the processor and follow the arrow next to the ``` JettyWebSocketClient``` 
       - Set WebSocket Client ID to your favorite number.
-      - Set ws://stream.meetup.com/2/rsvps for WebSocket URI
+      - Set ``` ws://stream.meetup.com/2/rsvps```  for WebSocket URI
   - Step 2: Add an UpdateAttribute procesor
     - Configure it to have a custom property called ``` mime.type ``` with the value of ``` application/json ```
   - Step 3. Add an EvaluateJsonPath processor and configure it as shown below:
@@ -138,15 +110,15 @@ To get started we need to consume the data from the Meetup RSVP stream, extract 
 
     group.state   $.group.group_state
 
-    group.country	$.group.group_country
+    group.country $.group.group_country
 
-    group.name		$.group.group_name
+    group.name    $.group.group_name
 
-    venue.lat		  $.venue.lat
+    venue.lat     $.venue.lat
 
     venue.lon     $.venue.lon
 
-    venue.name		$.venue.venue_name
+    venue.name    $.venue.venue_name
     ```
   - Step 4: Add a SplitJson processor and configure the JsonPath Expression to be ```$.group.group_topics ```
   - Step 5: Add a ReplaceText processor and configure the Search Value to be ```([{])([\S\s]+)([}])``` and the Replacement Value to be
@@ -200,7 +172,6 @@ In this lab, we will learn how to configure MiNiFi to send data to NiFi:
 ## Installing MiNiFi
 Run all the below commands:
 ````
-
 sudo mkdir /usr/hdf/current/nifi/minifi
 cd /usr/hdf/current/nifi/minifi
 sudo wget http://apache.claz.org/nifi/minifi/0.5.0/minifi-0.5.0-bin.tar.gz
@@ -227,15 +198,15 @@ sudo tar xzvf minifi-toolkit-0.5.0-bin.tar.gz
 
 Now we should be ready to create our flow. To do this do the following:
 
-1.	The first thing we are going to do is setup an Input Port. This is the port that MiNiFi will be sending data to. To do this drag the Input Port icon to the canvas and call it "From MiNiFi".
+1.	The first thing we are going to do is setup an Input Port. This is the port that MiNiFi will be sending data to. To do this drag the ```Input Port icon``` to the canvas and call it "From MiNiFi".
 
-2. Now that the Input Port is configured we need to have somewhere for the data to go once we receive it. In this case we will keep it very simple and just log the attributes. To do this drag the Processor icon to the canvas and choose the LogAttribute processor.
+2. Now that the Input Port is configured we need to have somewhere for the data to go once we receive it. In this case we will keep it very simple and just log the attributes. To do this drag the Processor icon to the canvas and choose the ```LogAttribute``` processor.
 
 3.	Now that we have the input port and the processor to handle our data, we need to connect them.
 
 4.  We are now ready to build the MiNiFi side of the flow. To do this do the following:
-	* Add a GenerateFlowFile processor to the canvas (don't forget to configure the properties on it)
-	* Add a Remote Processor Group to the canvas
+	* Add a ```GenerateFlowFile``` processor to the canvas (don't forget to configure the properties on it)
+	* Add a ```Remote Processor Group``` to the canvas
 
            For the URL copy and paste the URL for the NiFi UI from your browser
    * Connect the GenerateFlowFile to the Remote Process Group
@@ -243,13 +214,13 @@ Now we should be ready to create our flow. To do this do the following:
 5. The next step is to generate the flow we need for MiNiFi. To do this do the following steps:
 
    * Create a template for MiNiFi
-   * Select the GenerateFlowFile, the NiFi Flow Remote Processor Group, and the Connection between them (these are the only things needed for MiNiFi)
-   * Select the "Create Template" button from the toolbar
+   * Select the ```GenerateFlowFile```, the NiFi Flow Remote Processor Group, and the Connection between them (these are the only things needed for MiNiFi)
+   * Select the ```"Create Template"``` button from the toolbar
    * Choose the name "minifi_flow" for your template
 
 
 7. Now we need to download the template
-8. Now SCP the template you downloaded to the ````/tmp```` directory on your EC2 instance. If you are using Windows you will need to download WinSCP (https://winscp.net/eng/download.php)
+8. Now SCP the template you downloaded to the ````/tmp```` directory on your EC2 instance. If you are using Windows you will need to use WinSCP 
 9.  We are now ready to setup MiNiFi. However before doing that we need to convert the template to YAML format which MiNiFi uses. To do this we need to do the following:
 
     * Navigate to the minifi-toolkit directory (/usr/hdf/current/nifi/minifi/minifi-toolkit-0.5.0)
